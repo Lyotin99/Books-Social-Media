@@ -1,6 +1,6 @@
 const config = {
   apiKey: "",
-  authDomain: ",
+  authDomain: "",
   projectId: "",
   storageBucket: "",
   messagingSenderId: "",
