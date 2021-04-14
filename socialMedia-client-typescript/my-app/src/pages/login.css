@@ -1,0 +1,33 @@
+.form {
+  text-align: center;
+}
+.twitterIcon {
+  font-size: 100px;
+}
+
+#email {
+  margin: 5px auto 5px auto;
+}
+#password {
+  margin: 5px auto 5px auto;
+}
+#confirmPassword {
+  margin: 5px auto 5px auto;
+}
+#username {
+  margin: 5px auto 5px auto;
+}
+
+#btn {
+  margin-top: 20px;
+  position: relative;
+}
+.err {
+  font-size: 0.8rem;
+  color: red;
+  text-align: left;
+}
+
+#progress {
+  position: absolute;
+}

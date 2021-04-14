@@ -1,0 +1,31 @@
+body {
+  background: rgb(245, 245, 245);
+}
+
+.container {
+  margin: 40px auto 0 auto;
+  width: 100%;
+}
+.libraryContainer {
+  width: 90%;
+}
+.nav-container {
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-container svg {
+  color: white;
+}
+
+body {
+  /* background-image: url(./photos/book.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  background-color: rgba(255, 236, 214);
+  height: 100vh;
+}

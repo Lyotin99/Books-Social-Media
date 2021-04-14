@@ -1,0 +1,27 @@
+.username {
+  width: 60px;
+  height: 20px;
+  background-color: #ff4400;
+  margin-bottom: 7px;
+}
+
+.date {
+  height: 14px;
+  width: 100px;
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.fullLine {
+  height: 15px;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+.halfLine {
+  height: 15px;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
