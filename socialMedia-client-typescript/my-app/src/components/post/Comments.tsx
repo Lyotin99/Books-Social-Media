@@ -10,21 +10,35 @@ import Typography from "@material-ui/core/Typography";
 import dayjs from "dayjs";
 //Redux
 import { connect } from "react-redux";
+import { PostReply } from "../../redux/actions/dataActions";
 //Interfaces
 import { OnePostData, CommentsData } from "./postInterfaces";
-import CommentReplyForm from "./CommentReplyForm";
 
 interface DataPost {
   data: { post: OnePostData };
-  user: { credentials: { username: string } };
+  user: { credentials: { username: string; imageUrl: string } };
 }
-
+interface ReplyDataForm {
+  body: string;
+}
 interface Props {
   comments: CommentsData[];
   post: OnePostData;
-  user: { credentials: { username: string } };
+  PostReply: (commentId: string, replyData: ReplyDataForm) => void;
+  user: { credentials: { username: string; imageUrl: string } };
+}
+
+interface StateData {
+  body: string;
 }
 class Comments extends Component<Props> {
+  state: StateData = {
+    body: "",
+  };
+  handleChangeReply = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
   render() {
     const { comments } = this.props;
 
@@ -56,6 +70,7 @@ class Comments extends Component<Props> {
             ) : (
               ""
             );
+
           return (
             <Fragment key={index}>
               <Grid item sm={12} style={{ position: "relative" }}>
@@ -129,16 +144,11 @@ class Comments extends Component<Props> {
                       marginLeft: 150,
                     }}
                   >
-                    {/* <CommentReplyForm /> */}
-                    {repliesCount !== 0 ? (
-                      <CommentReply
-                        commentId={commentId}
-                        index={index}
-                        repliesCount={repliesCount}
-                      />
-                    ) : (
-                      ""
-                    )}
+                    <CommentReply
+                      commentId={commentId}
+                      index={index}
+                      repliesCount={repliesCount}
+                    />
                   </div>
                 </Grid>
               </Grid>
@@ -153,4 +163,4 @@ const mapStateToProps = (state: DataPost) => ({
   post: state.data.post,
   user: state.user,
 });
-export default connect(mapStateToProps)(Comments);
+export default connect(mapStateToProps, { PostReply })(Comments);
