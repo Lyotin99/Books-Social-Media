@@ -170,8 +170,10 @@ export class CommentReply extends Component<Props> {
             );
           }
         )
-      ) : (
+      ) : this.props.data.post.comments[this.props.index].repliesCount > 0 ? (
         <CircularProgress />
+      ) : (
+        ""
       );
 
     const customReplyInput = this.props.credentials.username ? (
