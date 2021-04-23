@@ -63,7 +63,7 @@ export const getPosts = () => (dispatch: Dispatch) => {
       });
     });
 };
-export const postReply = (commentId: string, replyData: CommentsData) => (
+export const PostReply = (commentId: string, replyData: CommentsData) => (
   dispatch: Dispatch<any>
 ) => {
   axiosPost(`/comments/${commentId}/replies`, replyData)
