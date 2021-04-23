@@ -99,7 +99,7 @@ const func = (state = initialState, action: any) => {
           }
           repliesCounter++;
         }
-        // state.post.comments[repliesCounter].repliesCount++;
+
         state.post.comments[repliesCounter].replies = action.payload;
       }
       return {
@@ -158,14 +158,15 @@ const func = (state = initialState, action: any) => {
       };
     case POST_REPLY:
       let repliesCounter1 = 0;
-
       for (let i = 0; i < state.post.comments.length; i++) {
-        if (state.post.comments[i].commentId === action.payload[0].commentId) {
+        if (state.post.comments[i].commentId === action.payload.commentId) {
           break;
         }
         repliesCounter1++;
       }
+
       state.post.comments[repliesCounter1].replies.push(action.payload);
+      state.post.comments[repliesCounter1].repliesCount++;
 
       return {
         ...state,
