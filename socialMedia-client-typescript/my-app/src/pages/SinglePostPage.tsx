@@ -199,7 +199,14 @@ class SinglePostPage extends Component<Props> {
       </Grid>
     );
     return (
-      <div style={{ width: 1200, margin: "0 auto 0 auto", paddingTop: 30 }}>
+      <div
+        style={{
+          width: 1200,
+          margin: "0 auto 0 auto",
+          paddingTop: 30,
+          marginBottom: 30,
+        }}
+      >
         {dialogMarkup}
       </div>
     );
