@@ -28,3 +28,6 @@ export const SUBMIT_COMMENT = "SUBMIT_COMMENT";
 export const EDIT_COMMENT = "EDIT_COMMENT";
 export const EDIT_POST = "EDIT_POST";
 export const DELETE_COMMENT = "DELETE_COMMENT";
+//REplies
+export const DELETE_REPLY = "DELETE_REPLY";
+export const EDIT_REPLY = "EDIT_REPLY";
