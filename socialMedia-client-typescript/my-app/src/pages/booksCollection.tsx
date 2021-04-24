@@ -27,6 +27,7 @@ class booksCollection extends Component {
 
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+       if (this.state.searchBar.trim() !== "")
     axios
       .get(
         `https://www.googleapis.com/books/v1/volumes?q=+${this.state.filterData}:${this.state.searchBar}&printType=books&maxResults=40`
