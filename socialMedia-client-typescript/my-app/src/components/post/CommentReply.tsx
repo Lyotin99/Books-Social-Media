@@ -19,6 +19,8 @@ import { connect } from "react-redux";
 import { getReplies, PostReply } from "../../redux/actions/dataActions";
 //Interfaces
 import { Credentials, OnePostData, ReplyData } from "./postInterfaces";
+import DeleteReply from "./DeleteReply";
+import EditReply from "./EditReply";
 
 interface Props {
   commentId: string;
@@ -98,10 +100,31 @@ export class CommentReply extends Component<Props> {
   };
   render() {
     const repliesMarkup =
+      this.props.data.post.comments[this.props.index].replies &&
       this.props.data.post.comments[this.props.index].replies.length > 0 ? (
         this.props.data.post.comments[this.props.index].replies?.map(
           (reply: ReplyData) => {
-            const { body, createdAt, userImage, username } = reply;
+            const {
+              body,
+              createdAt,
+              userImage,
+              username,
+              replyId,
+              commentId,
+            } = reply;
+            const deleteReplyBtn =
+              this.props.credentials.username === username ? (
+                <DeleteReply replyId={replyId} commentId={commentId} />
+              ) : (
+                ""
+              );
+
+            const editReply =
+              this.props.credentials.username === username ? (
+                <EditReply replyId={replyId} body={body} />
+              ) : (
+                ""
+              );
             return (
               <Fragment key={reply.replyId}>
                 <Grid
@@ -133,6 +156,8 @@ export class CommentReply extends Component<Props> {
                         marginLeft: -55,
                       }}
                     >
+                      {deleteReplyBtn}
+                      {editReply}
                       <div>
                         <Typography
                           variant="h5"
@@ -220,7 +245,7 @@ export class CommentReply extends Component<Props> {
           {this.props.credentials.username ? "Reply" : ""}
         </div>
 
-        <button
+        <div
           id="btn"
           onClick={this.handleSubmit}
           style={{
@@ -270,7 +295,7 @@ export class CommentReply extends Component<Props> {
               </div>
             </AccordionDetails>
           </Accordion>
-        </button>
+        </div>
       </Fragment>
     );
   }
