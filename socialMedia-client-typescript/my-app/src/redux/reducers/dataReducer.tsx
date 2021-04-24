@@ -15,6 +15,8 @@ import {
   SET_SAVED_POSTS,
   SET_REPLIES,
   POST_REPLY,
+  DELETE_REPLY,
+  EDIT_REPLY,
 } from "../types";
 
 import { InitialStateData } from "../../components/post/postInterfaces";
@@ -102,6 +104,33 @@ const func = (state = initialState, action: any) => {
 
         state.post.comments[repliesCounter].replies = action.payload;
       }
+      return {
+        ...state,
+      };
+    case DELETE_REPLY:
+      let index3 = state.post.comments.findIndex(
+        (comment) => comment.commentId === action.payload.commentId
+      );
+
+      let replyIndex = state.post.comments[index3].replies.findIndex(
+        (reply) => reply.replyId === action.payload.replyId
+      );
+
+      state.post.comments[index3].repliesCount--;
+      state.post.comments[index3].replies.splice(replyIndex, 1);
+      return {
+        ...state,
+      };
+    case EDIT_REPLY:
+      const b = state.post.comments.findIndex(
+        (com) => com.commentId === action.payload.commentId
+      );
+      let replyData = state.post.comments[b].replies.filter(
+        (reply) => reply.replyId === action.payload.replyId
+      );
+
+      replyData[0].body = action.payload.body;
+
       return {
         ...state,
       };
