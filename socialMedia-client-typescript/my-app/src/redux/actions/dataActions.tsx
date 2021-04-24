@@ -19,6 +19,8 @@ import {
   SET_SAVED_POSTS,
   SET_REPLIES,
   POST_REPLY,
+  DELETE_REPLY,
+  EDIT_REPLY,
 } from "../types";
 
 import {
@@ -90,6 +92,35 @@ export const getReplies = (commentId: string) => (dispatch: Dispatch) => {
     })
     .catch((err) => {
       console.log(err);
+    });
+};
+
+export const deleteReply = (commentId: string, replyId: string) => (
+  dispatch: Dispatch
+) => {
+  axiosDelete(`/comments/${commentId}/reply/${replyId}`)
+    .then(() => {
+      dispatch({ type: DELETE_REPLY, payload: { commentId, replyId } });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+export const editReply = (replyId: string, body: CommentData) => (
+  dispatch: Dispatch
+) => {
+  axiosPut(`/reply/${replyId}`, body)
+    .then((res) => {
+      dispatch({
+        type: EDIT_REPLY,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data,
+      });
     });
 };
 export const createPost = (newPost: NewPostData) => (
