@@ -12,5 +12,5 @@ Users can:
 ---------------------------------------
 -Users receive notifications for liking a post, commenting on a post
 ---------------------------------------
--Api for weekly's TOP 15 best books according to New York Times magazine in 3 categories: Paperback non-fictional, Hardcover non-fiction, Hardcover Fiction  
+-Api for weekly's TOP 15  books according to New York Times magazine in 3 categories: Paperback non-fictional, Hardcover non-fiction, Hardcover Fiction  
 ---------------------------------------
