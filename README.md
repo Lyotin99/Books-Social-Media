@@ -17,6 +17,7 @@ Users can:
 
 
 Project setup:
+-------------------------------
 git clone git@github.com:Lyotin99/Books-Social-Media.git
 -----------------------------
 cd Books-Social-Media  =>  cd socialMedia-client-typescript => cd my-app 
@@ -30,3 +31,4 @@ You can use this profile's info:
 email: lyotin@email.com
 -----------------------------------
 password:123456
+-----------------
