@@ -18,9 +18,9 @@ Users can:
 
 Project setup:
 --------------------------------
--npm install
+npm install
 ------------
--npm start
+npm start
 --------------------------------
 You can use this profile's info:
 ---------------------------------
