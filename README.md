@@ -17,6 +17,9 @@ Users can:
 
 
 Project setup:
+git clone 
+-----------------------------
+cd Books-Social-Media  =>  cd socialMedia-client-typescript => cd my-app 
 --------------------------------
 npm install
 ------------
