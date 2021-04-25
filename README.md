@@ -1,6 +1,7 @@
 ## Social media for book lovers
 
 Users can:
+-------------------------------------
 -Create posts, submit comments, reply to the comments.
 --------------------------------------
 -Edit and delete their own posts, comments and replies.
