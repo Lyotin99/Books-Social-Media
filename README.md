@@ -17,7 +17,7 @@ Users can:
 
 
 Project setup:
-git clone 
+git clone git@github.com:Lyotin99/Books-Social-Media.git
 -----------------------------
 cd Books-Social-Media  =>  cd socialMedia-client-typescript => cd my-app 
 --------------------------------
