@@ -99,7 +99,7 @@ export class EditReply extends Component<Props> {
     const { errors } = this.state;
     return (
       <Fragment>
-        <Tooltip title="Edit comment" placement="top">
+        <Tooltip title="Edit reply" placement="top">
           <IconButton
             onClick={this.handleOpen}
             style={{
@@ -122,7 +122,7 @@ export class EditReply extends Component<Props> {
           fullWidth
           maxWidth="sm"
         >
-          <DialogTitle>Edit comment</DialogTitle>
+          <DialogTitle>Edit reply</DialogTitle>
           <DialogContent>
             <form>
               <TextField
@@ -133,7 +133,7 @@ export class EditReply extends Component<Props> {
                 rows="3"
                 error={errors && errors.error ? true : false}
                 helperText={errors ? errors.error : ""}
-                placeholder="Edit your comment."
+                placeholder="Edit your reply."
                 className="body"
                 value={this.state.body}
                 onChange={this.handleChange}
