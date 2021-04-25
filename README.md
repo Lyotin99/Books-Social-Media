@@ -14,3 +14,16 @@ Users can:
 ---------------------------------------
 -Api for weekly's TOP 15  books according to New York Times magazine in 3 categories: Paperback non-fictional, Hardcover non-fiction, Hardcover Fiction  
 ---------------------------------------
+
+
+Project setup:
+--------------------------------
+-npm install
+------------
+-npm start
+--------------------------------
+You can use this profile's info:
+---------------------------------
+email: lyotin@email.com
+-----------------------------------
+password:123456
